@@ -21,7 +21,6 @@ class AddEmployee extends React.Component{
     }
 
     UpdateEmployees() {
-
           this.setState({
               isLoading: true
           });
@@ -30,7 +29,6 @@ class AddEmployee extends React.Component{
               .then(response => response.json())
               .then(data => this.setState({employees: data}))
               .then(() => this.setState({isLoading: false}));
-
         }
 
     postEmployee() {
@@ -48,8 +46,8 @@ class AddEmployee extends React.Component{
                     company: this.state.company,
                     email: this.state.email
                   }),
-            }).then(() => {this.setState({ isSaving: false })
-            }).then(() => this.UpdateEmployees());;
+            }).then(() => this.setState({ isSaving: false })
+            ).then(() => this.UpdateEmployees());
         }
 
     render()
