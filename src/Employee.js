@@ -3,7 +3,7 @@ import React from 'react'
 function Employee(props){
     return(
         <div>
-            <div style={{border: '2px solid black', margin:'10px', padding:'10px', borderRadius:'10px', backgroundColor:'lightYellow',  height:'230px'}}>
+            <div style={{border: '1px solid black', margin:'10px', padding:'10px', borderRadius:'5px', backgroundColor:'lightYellow',  height:'230px'}}>
                 <div>
                     <p>Id: {props.data._id}</p>
                     <p>Active: {props.data.isActive.toString()}</p>
