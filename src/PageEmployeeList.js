@@ -1,6 +1,7 @@
 import React from 'react'
 import Employee from './Employee'
 import { Link } from 'react-router-dom'
+import { withRouter } from "react-router-dom";
 
 class PageEmployeeList extends React.Component{
     constructor(props) {
@@ -69,4 +70,4 @@ class PageEmployeeList extends React.Component{
     }
 }
 
-export default PageEmployeeList
+export default withRouter(PageEmployeeList)

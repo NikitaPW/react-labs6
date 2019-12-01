@@ -1,4 +1,5 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom';
 
 class PageEmployee extends React.Component{
     constructor(props)
@@ -47,7 +48,8 @@ class PageEmployee extends React.Component{
                     email: this.state.email
                   }),
             }).then(() => this.setState({ isSaving: false })
-            ).then(() => this.UpdateEmployees());
+            ).then(() => this.UpdateEmployees())
+            .then(()=>this.props.history.push("/"))
         }
 
     render()
@@ -83,11 +85,12 @@ class PageEmployee extends React.Component{
                     onChange={this.onChange}></input>
                 <br/><br/>
                 <button onClick={this.postEmployee} style={{padding:'5px', width:'100px', borderRadius:'2px'}}>Submit</button>
-                <button onClick={this.props.cancelAddEmployee} style={{padding:'5px', width:'100px', borderRadius:'2px'}}>Cancel</button>
+                <button onClick={()=>this.props.history.push("/")} style={{padding:'5px', width:'100px', borderRadius:'2px'}}>Cancel</button>
                 </div>}
             </div>
         </div>
         )
     }
 }
-export default PageEmployee
+
+export default withRouter(PageEmployee)
