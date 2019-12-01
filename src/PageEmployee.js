@@ -1,6 +1,6 @@
 import React from 'react'
 
-class AddEmployee extends React.Component{
+class PageEmployee extends React.Component{
     constructor(props)
     {
     super(props);
@@ -19,7 +19,6 @@ class AddEmployee extends React.Component{
     onChange(event){
         this.setState({ [event.target.name] : event.target.value });
     }
-
     UpdateEmployees() {
           this.setState({
               isLoading: true
@@ -30,6 +29,7 @@ class AddEmployee extends React.Component{
               .then(data => this.setState({employees: data}))
               .then(() => this.setState({isLoading: false}));
         }
+
     postEmployee() {
             this.setState({ isSaving: true });
             fetch('http://localhost:3004/employees', {
@@ -89,4 +89,4 @@ class AddEmployee extends React.Component{
         )
     }
 }
-export default AddEmployee
+export default PageEmployee

@@ -12,7 +12,7 @@ function Employee(props){
                     <p>Company: {props.data.company}</p>
                     <p>Email: {props.data.email}</p>
                     <button style={{ borderRadius:'2px', margin:'0px 20px 100px 0px', padding:'10px', width:'150px'}}
-                    onClick={()=>{props.deleteEmployee([props.data.id])}}>Delete</button>
+                                        onClick={()=>{props.deleteEmployee([props.data.id])}}>Delete</button>
                 </div>
             </div>
             <br />
