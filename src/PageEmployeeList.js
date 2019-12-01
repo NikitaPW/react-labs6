@@ -1,5 +1,6 @@
 import React from 'react'
 import Employee from './Employee'
+import { Link } from 'react-router-dom'
 
 class PageEmployeeList extends React.Component{
     constructor(props) {
@@ -17,14 +18,14 @@ class PageEmployeeList extends React.Component{
             this.componentGet();
         }
 
-        componentGet(){
+     componentGet(){
             this.setState({ isLoading:true});
             fetch('http://localhost:3004/employees')
             .then(response => response.json())
             .then(data => this.setState({ employees:data }))
             .then(() => {this.setState({ isLoading: false })
             });
-        }
+     }
 
     UpdateEmployees() {
              this.setState({
@@ -58,7 +59,10 @@ class PageEmployeeList extends React.Component{
     if(this.state.employees) {
                 return (
                     <div>
-                        {allEmployees}
+                        <div>{allEmployees}</div>
+                        <Link to="/new">
+                        <button onClick={this.addEmployee} style={{marginLeft:'10px',borderRadius:'1px', width:'140px', height:'40px'}}>Create new employee </button>
+                        </Link>
                     </div>
                 )
                 }
