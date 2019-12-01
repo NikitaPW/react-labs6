@@ -28,7 +28,8 @@ class PageEmployee extends React.Component{
               .then(response => response.json())
               .then(data => this.setState({employees: data}))
               .then(() => this.setState({isLoading: false}));
-        }
+
+    }
 
     postEmployee() {
             this.setState({ isSaving: true });
